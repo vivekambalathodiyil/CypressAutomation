@@ -1,0 +1,24 @@
+﻿OrganisationID,Organisation,"Parent organisation ID","Organisational depth",Users,"Certifications assigned",Certified,"Compliance (%)"
+18,Board,2,2,10,97,86,89
+19,"Corporate & Support Services",18,3,37,371,331,89
+20,"Liverpool Service Area",19,4,6,74,54,73
+21,"Liverpool - Asylum Practice",20,5,5,80,72,90
+22,"Liverpool - Operational Division",20,5,49,618,568,92
+23,"Liverpool - Clinical Division",20,5,8,128,119,93
+24,"Knowsley & St. Helens Service Area",19,4,6,94,87,93
+25,"Knowsley & St. Helens - Operational Division",24,5,14,210,171,81
+26,"Knowsley & St. Helens - Clinical Division",24,5,2,32,29,91
+27,"Halton & Warrington Service Area",19,4,3,41,33,80
+28,"Halton & Warrington - Operational Division",27,5,14,217,182,84
+29,"Halton & Warrington - Clinical Division",27,5,1,16,13,81
+30,"Sefton Service Area",19,4,11,186,137,74
+31,"Sefton - Crosby Village Practice",30,5,6,97,66,68
+32,"Sefton - Crossways Practice",30,5,5,82,55,67
+33,"Sefton - Litherland Practice",30,5,9,150,89,59
+34,"Sefton - Maghull Practice",30,5,6,98,76,78
+35,"Sefton - Netherton Practice",30,5,2,34,29,85
+36,"Sefton - Seaforth Practice",30,5,2,30,21,70
+37,"Sefton - Thornton Practice",30,5,5,84,54,64
+38,"Sefton - Operational Division",30,5,17,259,198,76
+39,"Sefton - Clinical Division",30,5,2,33,26,79
+40,"Operational Bank",19,4,12,176,143,81
