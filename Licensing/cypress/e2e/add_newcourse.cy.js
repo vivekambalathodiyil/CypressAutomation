@@ -20,7 +20,7 @@ describe('Login', () => {
     cy.contains('Submit').click()
     cy.get('.alert').contains('Success!')
 
-// open course page and check if the course is added.
+// open course page search for the added course and check if it appears in the table
       cy.visit('admin/course/all')
       cy.get('input[placeholder="Search..."]').click().type('Course '+coursename)
       cy.get('.list-group-item').should('contain.text',coursename)

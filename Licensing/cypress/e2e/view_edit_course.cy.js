@@ -1,4 +1,5 @@
-describe('Login', () => {
+
+const faker = require('faker'); describe('Login', () => {
   beforeEach(() => {
     cy.loginAdmin()
   })
@@ -36,12 +37,40 @@ describe('Login', () => {
     })
   })
 
-it('edit a course', () => {
-  cy.visit('/admin/course/all')
+  it.only('edit a course', () => {
+    cy.visit('https://laravel-develop.edev.skillsforhealth.org.uk/admin/course/all')
+    cy.get('.btn.btn-success[type="button"]').first().click({ force: true })
+    // get the text from course full name to compare when the name is changed 
+    cy.get('#fullname > .col-sm-4 > .input-wrapper > .form-control').invoke('val').then((corusefullname) => {
+      // Use the 'text' variable containing the value of the course short name
+      cy.get('#shortname > .col-sm-4 > .input-wrapper > .form-control').invoke('val').then((Courseshortname) => {
+        // Use the 'text' variable containing the value of the textarea
+        cy.log('Course full name before editing' + corusefullname);
+        cy.log('Course short name before editing  ' + Courseshortname)
+//randon name for course, if same name is used the 
+        const coursename = faker.Name.firstName()
+        // edit the course full name and short name
+        cy.get('#fullname > .col-sm-4 > .input-wrapper > .form-control').clear().type('course' + coursename)
+        cy.get('#shortname > .col-sm-4 > .input-wrapper > .form-control').clear().type('C S Name')
+        cy.get('.col-sm-10 > .btn').click()
+        // verify if alert window is appearing with merssage course updated
+        cy.get('.alert').should('have.text', 'Success!Course updated.\n')
+        //get the changed course fullname
+        cy.get('#fullname > .col-sm-4 > .input-wrapper > .form-control').invoke('val').then((ChangedCourseName) => {
+//check if the full name is not the same 
+          if (ChangedCourseName === coursename) {
+            alert('name not changed')
+  // if the name is not changed the script will stop with this alert message
+            cy.log(coursename)
 
+          } else {
+            cy.log('Course details edited')
+          }
 
+        })
+      })
+    });
 
-
-})
+  })
 })
 
