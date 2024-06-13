@@ -23,14 +23,13 @@ describe('template spec', () => {
           cy.contains('Search').click()
 // get the text element that says 'no users found from heading, there are 2 headings in h4 so we have to use eq(1), which means the second heading
           cy.get('h4').eq(1).invoke('text').then((text) => {
-          cy.log(text)
 // we cannot user contains clause here as cypress will stop if the text is not found, instead we store the text and user '=='      
-            if (text == 'No users found') {
+            if (text === 'No users found') {
               cy.log('user deleted')
-              cy.visit('https://elearning.etest.skillsforhealth.org.uk/login/logout.php?')
-              cy.contains('Continue').click()
+              //cy.visit('https://elearning.etest.skillsforhealth.org.uk/login/logout.php?')
+              //cy.contains('Continue').click()
             } else {
-              alert('User not deleted')
+              cy.log('User not deleted'+ userdata.email)
             }
             })
         })
